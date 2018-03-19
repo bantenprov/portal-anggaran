@@ -17,6 +17,7 @@ class Anggaran extends Model
     ];
     protected $fillable = [
         'group_egovernment_id',
+        'sector_egovernment_id',
         'user_id',
         'label',
         'description'
@@ -25,6 +26,11 @@ class Anggaran extends Model
     public function group_egovernment()
     {
         return $this->belongsTo('Bantenprov\GroupEgovernment\Models\Bantenprov\GroupEgovernment\GroupEgovernment','group_egovernment_id');
+    }
+
+    public function sector_egovernment()
+    {
+        return $this->belongsTo('Bantenprov\SectorEgovernment\Models\Bantenprov\SectorEgovernment\SectorEgovernment','sector_egovernment_id');
     }
 
     public function user()
