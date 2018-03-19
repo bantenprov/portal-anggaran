@@ -105,8 +105,14 @@ export default {
         },
         {
           name: 'group_egovernment.label',
-          title: 'GroupEgovernment',
+          title: 'Group',
           sortField: 'group_egovernment_id',
+          titleClass: 'center aligned'
+        },
+        {
+          name: 'sector_egovernment.label',
+          title: 'Sector',
+          sortField: 'sector_egovernment_id',
           titleClass: 'center aligned'
         },
         {

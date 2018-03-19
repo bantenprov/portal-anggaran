@@ -16,6 +16,7 @@ class CreateAnggaransTable extends Migration
 			$table->increments('id');
 			$table->integer('user_id');
 			$table->integer('group_egovernment_id');
+			$table->integer('sector_egovernment_id');
 			$table->string('label')->nullable();
 			$table->string('description')->nullable();
 			$table->timestamps();
