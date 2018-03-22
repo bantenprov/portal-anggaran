@@ -243,4 +243,9 @@ Vue.component('anggaran-pie-03', AnggaranPie03);
 import AnggaranRealisasiAPBNPie from './components/views/bantenprov/anggaran/AnggaranRealisasiAPBNPie.vue';
 Vue.component('anggaran-realisasi-apbn-pie', AnggaranRealisasiAPBNPie);
 
+//== Anggaran dan Realisasi APBD
+
+import AnggaranRealisasiAPBDPie from './components/views/bantenprov/anggaran/AnggaranRealisasiAPBDPie.vue';
+Vue.component('anggaran-realisasi-apbd-pie', AnggaranRealisasiAPBDPie);
+
 ```
