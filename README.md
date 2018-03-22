@@ -218,24 +218,29 @@ Vue.component('admin-view-anggaran-tahun', AnggaranAdminShow);
 import AnggaranBar01 from './components/views/bantenprov/anggaran/AnggaranBar01.vue';
 Vue.component('anggaran-bar-01', AnggaranBar01);
 
+import AnggaranPie01 from './components/views/bantenprov/anggaran/AnggaranPie01.vue';
+Vue.component('anggaran-pie-01', AnggaranPie01);
+
+//==
+
 import AnggaranBar02 from './components/views/bantenprov/anggaran/AnggaranBar02.vue';
 Vue.component('anggaran-bar-02', AnggaranBar02);
+
+import AnggaranPie02 from './components/views/bantenprov/anggaran/AnggaranPie02.vue';
+Vue.component('anggaran-pie-02', AnggaranPie02);
 
 //== mini bar charts
 import AnggaranBar03 from './components/views/bantenprov/anggaran/AnggaranBar03.vue';
 Vue.component('anggaran-bar-03', AnggaranBar03);
 
-import AnggaranPie01 from './components/views/bantenprov/anggaran/AnggaranPie01.vue';
-Vue.component('anggaran-pie-01', AnggaranPie01);
-
-import AnggaranPie02 from './components/views/bantenprov/anggaran/AnggaranPie02.vue';
-Vue.component('anggaran-pie-02', AnggaranPie02);
-
 //== mini pie charts
-
 
 import AnggaranPie03 from './components/views/bantenprov/anggaran/AnggaranPie03.vue';
 Vue.component('anggaran-pie-03', AnggaranPie03);
 
-```
+//== Anggaran dan Realisasi APBN
 
+import AnggaranRealisasiAPBNPie from './components/views/bantenprov/anggaran/AnggaranRealisasiAPBNPie.vue';
+Vue.component('anggaran-realisasi-apbn-pie', AnggaranRealisasiAPBNPie);
+
+```
