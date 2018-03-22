@@ -56,7 +56,7 @@
         <div class="form-row mt-4">
 					<div class="col-md">
 						<validate tag="div">
-						<label for="group_egovernment">GroupEgovernment</label>
+						<label for="group_egovernment">Group</label>
 						<v-select name="group_egovernment" v-model="model.group_egovernment" :options="group_egovernment" class="mb-4"></v-select>
 
 						<field-messages name="group_egovernment" show="$invalid && $submitted" class="text-danger">
@@ -66,6 +66,20 @@
 						</validate>
 					</div>
 				</div>
+
+        <div class="form-row mt-4">
+          <div class="col-md">
+            <validate tag="div">
+            <label for="sector_egovernment">Sector</label>
+            <v-select name="sector_egovernment" v-model="model.sector_egovernment" :options="sector_egovernment" class="mb-4"></v-select>
+
+            <field-messages name="sector_egovernment" show="$invalid && $submitted" class="text-danger">
+              <small class="form-text text-success">Looks good!</small>
+              <small class="form-text text-danger" slot="required">Label is a required field</small>
+            </field-messages>
+            </validate>
+          </div>
+        </div>
 
         <div class="form-row mt-4">
           <div class="col-md">
@@ -91,6 +105,7 @@ export default {
           this.model.old_label = response.data.anggaran.label;
           this.model.description = response.data.anggaran.description;
           this.model.group_egovernment = response.data.group_egovernment;
+          this.model.sector_egovernment = response.data.sector_egovernment;
         } else {
           alert('Failed');
         }
@@ -104,6 +119,9 @@ export default {
       .then(response => {
           response.data.group_egovernment.forEach(element => {
             this.group_egovernment.push(element);
+          });
+          response.data.sector_egovernment.forEach(element => {
+            this.sector_egovernment.push(element);
           });
           response.data.user.forEach(user_element => {
             this.user.push(user_element);
@@ -121,8 +139,10 @@ export default {
         user: "",
         description: "",
         group_egovernment: "",
+        sector_egovernment: "",
       },
       group_egovernment: [],
+      sector_egovernment: [],
       user: []
     }
   },
@@ -138,6 +158,7 @@ export default {
             description: this.model.description,
             old_label: this.model.old_label,
             group_egovernment_id: this.model.group_egovernment.id,
+            sector_egovernment_id: this.model.sector_egovernment.id,
             user_id: this.model.user.id
           })
           .then(response => {
