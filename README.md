@@ -23,7 +23,7 @@ $ composer require bantenprov/portal-anggaran:dev-master
 - Latest release:
 
 ```bash
-$ composer require bantenprov/portal-anggaran:dev-master
+$ composer require bantenprov/portal-anggaran:v0.1
 ```
 
 ### Download via github
