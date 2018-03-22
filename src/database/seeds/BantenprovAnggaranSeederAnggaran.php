@@ -29,7 +29,7 @@ class BantenprovAnggaranSeederAnggaran extends Seeder
             (object) [
                 'user_id' => '2',
                 'group_egovernment_id' => '2',
-                'sector_egovernment_id' => '',
+                'sector_egovernment_id' => '2',
                 'label' => 'GroupEgovernment 2',
                 'description' => 'GroupEgovernment dua',
             ]
