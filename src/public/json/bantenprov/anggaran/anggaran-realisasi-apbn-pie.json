@@ -1,0 +1,138 @@
+[
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "title": "APBN Realisasi Anggaran TA 2017 Triwulan 1 DEKON",
+        "yyyy": "2018"
+      },
+      "series": [
+        {
+          "data": [
+            {"value":17,"name":"Rencana Keuangan"},
+            {"value":83,"name":"Realisasi Keuangan"}
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "title": "APBN Realisasi Fisik TA 2017 Triwulan 1 DEKON",
+        "yyyy": "2018"
+      },
+      "series": [
+        {
+          "data": [
+            {"value":2.06,"name":"Rencana Kinerja"},
+            {"value":1.46,"name":"Realisasi Kinerja"}
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "title": "APBN Realisasi Anggaran TA 2017 Triwulan 2 DEKON",
+        "yyyy": "2018"
+      },
+      "series": [
+        {
+          "data": [
+            {"value":10,"name":"Rencana Keuangan"},
+            {"value":90,"name":"Realisasi Keuangan"}
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "title": "APBN Realisasi Fisik TA 2017 Triwulan 2 DEKON",
+        "yyyy": "2018"
+      },
+      "series": [
+        {
+          "data": [
+            {"value":13.77,"name":"Rencana Kinerja"},
+            {"value":9.11,"name":"Realisasi Kinerja"}
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "title": "APBN Realisasi Anggaran TA 2017 Triwulan 3 DEKON",
+        "yyyy": "2018"
+      },
+      "series": [
+        {
+          "data": [
+            {"value":7,"name":"Rencana Keuangan"},
+            {"value":93,"name":"Realisasi Keuangan"}
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "title": "APBN Realisasi Fisik TA 2017 Triwulan 3 DEKON",
+        "yyyy": "2018"
+      },
+      "series": [
+        {
+          "data": [
+            {"value":25.41,"name":"Rencana Kinerja"},
+            {"value":15.24,"name":"Realisasi Kinerja"}
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "title": "APBN Realisasi Anggaran TA 2017 Triwulan 4 DEKON",
+        "yyyy": "2018"
+      },
+      "series": [
+        {
+          "data": [
+            {"value":100,"name":"Realisasi Keuangan"}
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "title": "APBN Realisasi Fisik TA 2017 Triwulan 4 DEKON",
+        "yyyy": "2018"
+      },
+      "series": [
+        {
+          "data": [
+            {"value":28.64,"name":"Rencana Kinerja"},
+            {"value":20.58,"name":"Realisasi Kinerja"}
+          ]
+        }
+      ]
+    }
+  ]
+  

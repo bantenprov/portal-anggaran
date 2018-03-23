@@ -1,0 +1,167 @@
+[
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "yyyy": "2011",
+        "title": "APBD Realisasi Keuangan Triwulan 1 2017",
+        "data": [
+          "Rencana Keuangan",
+          "Realisasi Keuangan"
+        ]
+      },
+      "series": [
+        {
+          "data": [
+            81,
+            19
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Negara",
+        "title": "APBD Realisasi Kinerja Triwulan 1 2017",
+        "yyyy": "2011",
+        "data": [
+          "Rencana Kinerja",
+          "Realisasi Kinerja"
+        ]
+      },
+      "series": [
+        {
+          "data": [
+            18.88,
+            7.85
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "yyyy": "2011",
+        "title": "APBD Realisasi Keuangan Triwulan 2 2017",
+        "data": [
+          "Rencana Keuangan",
+          "Realisasi Keuangan"
+        ]
+      },
+      "series": [
+        {
+          "data": [
+            71,
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Negara",
+        "title": "APBD Realisasi Kinerja Triwulan 2 2017",
+        "yyyy": "2011",
+        "data": [
+          "Rencana Kinerja",
+          "Realisasi Kinerja"
+        ]
+      },
+      "series": [
+        {
+          "data": [
+            34.56,
+            21.02
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "yyyy": "2011",
+        "title": "APBD Realisasi Keuangan Triwulan 3 2017",
+        "data": [
+          "Rencana Keuangan",
+          "Realisasi Keuangan"
+        ]
+      },
+      "series": [
+        {
+          "data": [
+            67,
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Negara",
+        "title": "APBD Realisasi Kinerja Triwulan 3 2017",
+        "yyyy": "2011",
+        "data": [
+          "Rencana Kinerja",
+          "Realisasi Kinerja"
+        ]
+      },
+      "series": [
+        {
+          "data": [
+            43.34,
+            39.02
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Provinsi",
+        "name": "Banten",
+        "yyyy": "2011",
+        "title": "APBD Realisasi Keuangan Triwulan 4 2017",
+        "data": [
+          "Rencana Keuangan",
+          "Realisasi Keuangan"
+        ]
+      },
+      "series": [
+        {
+          "data": [
+            60,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "xAxis": {
+        "type": "category",
+        "region": "Negara",
+        "title": "APBD Realisasi Kinerja Triwulan 4 2017",
+        "yyyy": "2011",
+        "data": [
+          "Rencana Kinerja",
+          "Realisasi Kinerja"
+        ]
+      },
+      "series": [
+        {
+          "data": [
+            43.35,
+            57.44
+          ]
+        }
+      ]
+    }
+  ]
+  
