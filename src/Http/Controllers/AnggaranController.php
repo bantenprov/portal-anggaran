@@ -66,9 +66,9 @@ class AnggaranController extends Controller
         }
 
         $perPage = request()->has('per_page') ? (int) request()->per_page : null;
-        $response = $query->paginate($perPage);
+        $response = $query->with('group_egovernment')->with('sector_egovernment')->with('user')->paginate($perPage);
 
-        foreach($response as $group_egovernment){
+        /*foreach($response as $group_egovernment){
             array_set($response->data, 'group_egovernment', $group_egovernment->group_egovernment->label);
         }
 
@@ -78,7 +78,7 @@ class AnggaranController extends Controller
 
         foreach($response as $user){
             array_set($response->data, 'user', $user->user->name);
-        }
+        }*/
 
         return response()->json($response)
             ->header('Access-Control-Allow-Origin', '*')
@@ -119,11 +119,11 @@ class AnggaranController extends Controller
         $anggaran = $this->anggaran;
 
         $validator = Validator::make($request->all(), [
-            'group_egovernment_id' => 'required',
-            'sector_egovernment_id' => 'required',
-            'user_id' => 'required',
-            'label' => 'required|max:255|unique:anggarans,label',
-            'description' => 'max:255',
+            'group_egovernment_id'      => 'required',
+            'sector_egovernment_id'     => 'required',
+            'user_id'                   => 'required',
+            'label'                     => 'required',
+            'description'               => 'required',
         ]);
 
         if($validator->fails()){
@@ -205,57 +205,46 @@ class AnggaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $anggaran = $this->anggaran->findOrFail($id);
+        $response = array();
+        $message  = array();
 
-        if ($request->input('old_label') == $request->input('label'))
+        $anggaran = $this->anggaran->findOrFail($id);
         {
             $validator = Validator::make($request->all(), [
-                'label' => 'required|max:255',
-                'description' => 'max:255',
-                'group_egovernment_id' => 'required',
+                'label'                 => 'required',
+                'description'           => 'required',
+                'group_egovernment_id'  => 'required',
                 'sector_egovernment_id' => 'required',
-                'user_id' => 'required',
+                'user_id'               => 'required',
+                'link'                  => 'required',
             ]);
-        } else {
-            $validator = Validator::make($request->all(), [
-                'label' => 'required|max:255|unique:anggarans,label',
-                'description' => 'max:255',
-                'group_egovernment_id' => 'required',
-                'sector_egovernment_id' => 'required',
-                'user_id' => 'required',
-            ]);
-        }
 
-        if ($validator->fails()) {
-            $check = $anggaran->where('label',$request->label)->whereNull('deleted_at')->count();
+             if($validator->fails()){
 
-            if ($check > 0) {
-                $response['message'] = 'Failed, label ' . $request->label . ' already exists';
+                foreach($validator->messages()->getMessages() as $key => $error){
+                    foreach($error AS $error_get) {
+                        array_push($message, $error_get. "\n");
+                    }                
+                } 
+                $response['message'] = $message;
+
             } else {
-                $anggaran->label = $request->input('label');
-                $anggaran->description = $request->input('description');
-                $anggaran->group_egovernment_id = $request->input('group_egovernment_id');
-                $anggaran->sector_egovernment_id = $request->input('sector_egovernment_id');
-                $anggaran->user_id = $request->input('user_id');
+                $anggaran->label                    = $request->input('label');
+                $anggaran->description              = $request->input('description');
+                $anggaran->link                     = $request->input('link');
+                $anggaran->group_egovernment_id     = $request->input('group_egovernment_id');
+                $anggaran->sector_egovernment_id    = $request->input('sector_egovernment_id');
+                $anggaran->user_id                  = $request->input('user_id');
                 $anggaran->save();
 
                 $response['message'] = 'success';
             }
-        } else {
-            $anggaran->label = $request->input('label');
-            $anggaran->description = $request->input('description');
-            $anggaran->group_egovernment_id = $request->input('group_egovernment_id');
-            $anggaran->sector_egovernment_id = $request->input('sector_egovernment_id');
-            $anggaran->user_id = $request->input('user_id');
-            $anggaran->save();
-
-            $response['message'] = 'success';
-        }
 
         $response['status'] = true;
 
         return response()->json($response);
     }
+}
 
     /**
      * Remove the specified resource from storage.

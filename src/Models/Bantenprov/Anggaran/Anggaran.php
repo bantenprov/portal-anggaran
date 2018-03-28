@@ -20,7 +20,8 @@ class Anggaran extends Model
         'sector_egovernment_id',
         'user_id',
         'label',
-        'description'
+        'description',
+        'link'
     ];
 
     public function group_egovernment()

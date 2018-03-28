@@ -98,12 +98,6 @@ export default {
           titleClass: 'center aligned'
         },
         {
-          name: 'user.name',
-          title: 'Username',
-          sortField: 'user_id',
-          titleClass: 'center aligned'
-        },
-        {
           name: 'group_egovernment.label',
           title: 'Group',
           sortField: 'group_egovernment_id',
@@ -120,6 +114,19 @@ export default {
           title: 'Description',
           sortField: 'description',
           titleClass: 'center aligned'
+        },
+        {
+          name: 'user.name',
+          title: 'Username',
+          sortField: 'user_id',
+          titleClass: 'center aligned'
+        },
+        {
+          name: 'link',
+          title: 'Link',
+          sortField: 'link',
+          titleClass: 'center aligned',
+          callback:'url_to'
         },
         {
           name: '__slot:actions',
@@ -156,11 +163,15 @@ export default {
     }
   },
   methods: {
+    url_to(value){ 
+      return "<a href='"+value+"' target='_blank'>"+value+"</a>" 
+    },
+
     createRow() {
       window.location = '#/admin/anggaran/create';
     },
     viewRow(rowData) {
-      window.location = '#/admin/anggaran/' + rowData.id;
+      window.location = '#/anggaran/' + rowData.id;
     },
     editRow(rowData) {
       window.location = '#/admin/anggaran/' + rowData.id + '/edit';

@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-header">
-      <i class="fa fa-table" aria-hidden="true"></i> Show anggaran {{ model.label }}
+      <i class="fa fa-table" aria-hidden="true"></i> Anggaran {{ model.label }}
 
       <ul class="nav nav-pills card-header-pills pull-right">
         <li class="nav-item">
@@ -28,12 +28,6 @@
 
         <div class="form-row mt-4">
 					<div class="col-md">
-						<b>Username :</b> {{ model.user.name }}
-					</div>
-				</div>
-
-        <div class="form-row mt-4">
-					<div class="col-md">
 						<b>Group :</b> {{ model.group_egovernment.label }}
 					</div>
 				</div>
@@ -44,8 +38,25 @@
           </div>
         </div>
 
-      </vue-form>
+        <div class="form-row mt-4">
+          <div class="col-md">
+            <b>Link : <a v-bind:href="model.link" target='_blank'> {{ model.link }} </a> </b> 
+          </div>
+        </div>
+
+       </vue-form>
     </div>
+     <div class="card-footer text-muted">
+        <div class="row">
+          <div class="col-md">
+            <b>Username :</b>  {{ model.user.name }}
+          </div>
+          <div class="col-md">
+            <div class="col-md text-right">Dibuat : {{ model.created_at }}</div>
+            <div class="col-md text-right">Diperbaiki : {{ model.updated_at }}</div>
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 
@@ -55,12 +66,15 @@ export default {
     axios.get('api/anggaran/' + this.$route.params.id)
       .then(response => {
         if (response.data.status == true) {
-          this.model.label = response.data.anggaran.label;
-          this.model.old_label = response.data.anggaran.label;
-          this.model.description = response.data.anggaran.description;
-          this.model.group_egovernment = response.data.group_egovernment;
+          this.model.label              = response.data.anggaran.label;
+          this.model.old_label          = response.data.anggaran.label;
+          this.model.description        = response.data.anggaran.description;
+          this.model.group_egovernment  = response.data.group_egovernment;
           this.model.sector_egovernment = response.data.sector_egovernment;
-          this.model.user = response.data.user;
+          this.model.user               = response.data.user;
+          this.model.link               = response.data.anggaran.link;
+          this.model.created_at         = response.data.anggaran.created_at;
+          this.model.updated_at         = response.data.anggaran.updated_at;
         } else {
           alert('Failed');
         }
@@ -89,12 +103,19 @@ export default {
         user:"",
         group_egovernment: "",
         sector_egovernment: "",
+        link:"",
+        created_at:"",
+        updated_at:"",
       },
       group_egovernment: [],
       sector_egovernment: []
     }
   },
   methods: {
+    url_to(value){  
+      return "<a href='"+value+"' target='_blank'>"+value+"</a>" 
+    },
+
     onSubmit: function() {
       let app = this;
 
