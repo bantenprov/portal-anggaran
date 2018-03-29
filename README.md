@@ -81,6 +81,41 @@ $ php artisan vendor:publish --tag=anggaran-assets
 $ php artisan vendor:publish --tag=anggaran-public
 ```
 #### Tambahkan route di dalam file : `resources/assets/js/routes.js` :
+```javascript
+function layout(name) {
+  return function(resolve) {
+    require(['./layouts/' + name + '.vue'], resolve);
+  }
+}
+
+let routes = [
+{
+    path: '/',
+    name: 'home',
+    component: resolve => require(['./components/views/Home.vue'], resolve),
+  },
+  //==...
+
+  {
+    path: '/anggaran/:id',
+    name: 'home',
+    component: resolve => require(['./components/bantenprov/anggaran/Anggaran.show.vue'], resolve),
+    meta: {
+        title: "Anggaran"
+    }
+  },
+
+  //==..
+  {
+    path: '/sign-in',
+    name: 'sign-in',
+    component: resolve => require(['./components/views/SignIn.vue'], resolve),
+    meta: {
+      title: "Sign in"
+    }
+  },
+```
+
 
 ```javascript
 {

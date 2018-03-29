@@ -40,6 +40,18 @@
         </div>
 
         <div class="form-row mt-4">
+          <div class="col-md">
+            <validate tag="div">
+              <input class="form-control" v-model="model.link" name="link" type="text" placeholder="Link">
+
+              <field-messages name="link" show="$invalid && $submitted" class="text-danger">
+                <small class="form-text text-success">Looks good!</small>
+              </field-messages>
+            </validate>
+          </div>
+        </div>
+
+        <div class="form-row mt-4">
 					<div class="col-md">
 						<validate tag="div">
 						<label for="user_id">Username</label>
@@ -100,12 +112,13 @@ export default {
     axios.get('api/anggaran/' + this.$route.params.id + '/edit')
       .then(response => {
         if (response.data.status == true) {
-          this.model.user = response.data.user,
-          this.model.label = response.data.anggaran.label;
-          this.model.old_label = response.data.anggaran.label;
-          this.model.description = response.data.anggaran.description;
-          this.model.group_egovernment = response.data.group_egovernment;
+          this.model.user               = response.data.user,
+          this.model.label              = response.data.anggaran.label;
+          this.model.old_label          = response.data.anggaran.label;
+          this.model.description        = response.data.anggaran.description;
+          this.model.group_egovernment  = response.data.group_egovernment;
           this.model.sector_egovernment = response.data.sector_egovernment;
+          this.model.link               = response.data.anggaran.link;
         } else {
           alert('Failed');
         }
@@ -140,6 +153,7 @@ export default {
         description: "",
         group_egovernment: "",
         sector_egovernment: "",
+        link: "",
       },
       group_egovernment: [],
       sector_egovernment: [],
@@ -154,12 +168,13 @@ export default {
         return;
       } else {
         axios.put('api/anggaran/' + this.$route.params.id, {
-            label: this.model.label,
-            description: this.model.description,
-            old_label: this.model.old_label,
-            group_egovernment_id: this.model.group_egovernment.id,
-            sector_egovernment_id: this.model.sector_egovernment.id,
-            user_id: this.model.user.id
+            label:                  this.model.label,
+            description:            this.model.description,
+            old_label:              this.model.old_label,
+            group_egovernment_id:   this.model.group_egovernment.id,
+            sector_egovernment_id:  this.model.sector_egovernment.id,
+            user_id:                this.model.user.id,
+            link:                   this.model.link
           })
           .then(response => {
             if (response.data.status == true) {
@@ -184,6 +199,7 @@ export default {
           if (response.data.status == true) {
             this.model.label = response.data.anggaran.label;
             this.model.description = response.data.anggaran.description;
+            this.model.link = response.data.anggaran.link;
           } else {
             alert('Failed');
           }
